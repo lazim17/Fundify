@@ -274,7 +274,6 @@ export default function Home({ campaigns }) {
         </Container>
         <Container py={{ base: "4", md: "12" }} maxW={"7xl"}>
           <HStack spacing={2}>
-            <SkeletonCircle size="4" />
             <Heading as="h2" size="lg">
               Featured Campaigns
             </Heading>
@@ -309,11 +308,10 @@ export default function Home({ campaigns }) {
             </SimpleGrid>
           )}
         </Container>
-        <Container py={{ base: "4", md: "12" }} maxW={"7xl"} id="howitworks">
+        <Container py={{ base: "4", md: "12" }} maxW={"7xl"} id="howitworks" display={"flex"} flexDirection={"column"} justifyContent={"space-between"} h={"60vh"}>
           <HStack spacing={2}>
-            <SkeletonCircle size="4" />
             <Heading as="h2" size="lg">
-              How BetterFund Works
+              How Fundify Works
             </Heading>
           </HStack>
           <Divider marginTop="4" />
