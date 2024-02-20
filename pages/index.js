@@ -80,7 +80,7 @@ function CampaignCard({
         bg={useColorModeValue("white", "black")}
         maxW={{ md: "sm" }}
         borderWidth="1px"
-        rounded="lg"
+        borderRadius={"2xl"}
         shadow="lg"
         position="relative"
         alignItems="center"
@@ -124,7 +124,7 @@ function CampaignCard({
               bg={useColorModeValue("white", "black")}
               placement={"top"}
               color={useColorModeValue("black", "white")}
-              fontSize={"1.2em"}
+              fontSize={"1em"}
             >
               <chakra.a display={"flex"}>
                 <Icon
@@ -157,7 +157,7 @@ function CampaignCard({
                 <Text as="span" fontWeight={"bold"}>
                   {balance > 0
                     ? web3.utils.fromWei(balance, "ether")
-                    : "0, Become a Donor 😄"}
+                    : "No Contributions"}
                 </Text>
                 <Text
                   as="span"
@@ -170,7 +170,7 @@ function CampaignCard({
                 </Text>
                 <Text
                   as="span"
-                  fontSize="lg"
+                  fontSize="md"
                   display={balance > 0 ? "inline" : "none"}
                   fontWeight={"normal"}
                   color={useColorModeValue("gray.500", "gray.200")}
@@ -179,8 +179,8 @@ function CampaignCard({
                 </Text>
               </Box>
 
-              <Text fontSize={"md"} fontWeight="normal">
-                target of {web3.utils.fromWei(target, "ether")} ETH ($
+              <Text fontSize={"sm"} fontWeight="normal">
+                Target: {web3.utils.fromWei(target, "ether")} ETH ($
                 {getWEIPriceInUSD(ethPrice, target)})
               </Text>
               <Progress
@@ -188,6 +188,7 @@ function CampaignCard({
                 size="sm"
                 value={web3.utils.fromWei(balance, "ether")}
                 max={web3.utils.fromWei(target, "ether")}
+                borderRadius={"lg"}
                 mt="2"
               />
             </Box>{" "}

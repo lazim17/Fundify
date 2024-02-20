@@ -48,8 +48,8 @@ export default function Footer() {
       <Container
         as={Stack}
         maxW={"6xl"}
-        py={4}
-        spacing={4}
+        py={8}
+        spacing={8}
         justify={"center"}
         align={"center"}
       >
