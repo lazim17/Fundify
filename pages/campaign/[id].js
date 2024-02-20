@@ -159,7 +159,7 @@ export default function CampaignSingle({
       <Head>
         <title>Campaign Details</title>
         <meta name="description" content="Create a Withdrawal Request" />
-        <link rel="icon" href="/logo.svg" />
+        <link rel="icon" href="/Fundify.png" />
       </Head>
       {isSubmitted ? <Confetti width={width} height={height} /> : null}
       <main>
@@ -176,7 +176,7 @@ export default function CampaignSingle({
                 <AlertIcon />
                 <AlertDescription mr={2}>
                   {" "}
-                  Thank You for your Contribution 🙏
+                  Thank You for your Contribution
                 </AlertDescription>
                 <CloseButton
                   position="absolute"

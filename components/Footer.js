@@ -73,13 +73,13 @@ export default function Footer() {
           <NextLink href="/">Home</NextLink>
           <Link
             href={
-              "https://github.com/harsh242/betterfund-crowdfunding-in-blockchain"
+              "https://github.com/lazim17/Fundify"
             }
             isExternal
           >
             Github
           </Link>
-          <Link href={"mailto:harshbadhai242@gmail.com"} isExternal>
+          <Link href={"mailto:fundify@gmail.com"} isExternal>
             Contact
           </Link>
         </Stack>
@@ -92,35 +92,13 @@ export default function Footer() {
       >
         <Container
           as={Stack}
-          maxW={"6xl"}
           py={4}
           direction={{ base: "column", md: "row" }}
           spacing={4}
-          justify={{ base: "center", md: "space-between" }}
+          justify={{ base: "center"}}
           align={{ base: "center", md: "center" }}
         >
-          <Text>🌐 Made by Ahamed Lazim, Anoop Tom, Arjun V</Text>
-          <Stack direction={"row"} spacing={6}>
-            <SocialButton label={"Website"} href={"https://harshbadhai.me/"}>
-              {" "}
-              <FaGlobe />
-            </SocialButton>
-            <SocialButton
-              label={"Twitter"}
-              href={"https://twitter.com/harshbadhai28"}
-            >
-              <FaTwitter />
-            </SocialButton>
-            <SocialButton label={"Github"} href={"https://github.com/harsh242"}>
-              <FaGithub />
-            </SocialButton>
-            <SocialButton
-              label={"Instagram"}
-              href={"https://www.instagram.com/frames_by._harsh/"}
-            >
-              <FaInstagram />
-            </SocialButton>
-          </Stack>
+          <Text>🌐 Made by <Link href="">Ahamed Lazim</Link>, <Link target="blank" href="">Anoop Tom</Link>, <Link target="blank" href="https://notarjunvijayan.tech">Arjun V</Link></Text>
         </Container>
       </Box>
     </Box>
