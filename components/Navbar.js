@@ -13,6 +13,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Image
 } from "@chakra-ui/react";
 import { useWallet } from "use-wallet";
 
@@ -36,7 +37,7 @@ export default function NavBar() {
         pos="fixed"
         top="0"
         w={"full"}
-        minH={"60px"}
+        minH={"80px"}
         boxShadow={"sm"}
         zIndex="999"
         justify={"center"}
@@ -49,18 +50,20 @@ export default function NavBar() {
         }}
       >
         <Container as={Flex} maxW={"7xl"} align={"center"}>
-          <Flex flex={{ base: 1 }} justify="start" ml={{ base: -2, md: 0 }}>
+          <Flex flex={{ base: 1 }} justify="start" align="center" ml={{ base: -2, md: 0 }}>
+            <Image src="/Fundify.png" boxSize={"40px"} objectFit={"cover"}/>
             <Heading
               textAlign="left"
               fontFamily={"heading"}
               color={useColorModeValue("teal.800", "white")}
               as="h2"
-              size="lg"
+              size="md"
             >
               <Box
                 as={"span"}
-                color={useColorModeValue("teal.400", "white")}
-                position={"relative"}
+                color={useColorModeValue("black.200", "white")}
+                position={"flex"}
+                alignItems={"center"}
                 zIndex={10}
               >
                 <NextLink href="/">Fundify</NextLink>
@@ -93,7 +96,7 @@ export default function NavBar() {
 
             {wallet.status === "connected" ? (
               <Menu>
-                <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                <MenuButton as={Button} rightIcon={<ChevronDownIcon />} borderRadius={"30px"}>
                   {wallet.account.substr(0, 10) + "..."}
                 </MenuButton>
                 <MenuList>
@@ -115,6 +118,7 @@ export default function NavBar() {
                   _hover={{
                     bg: "teal.300",
                   }}
+                  borderRadius={"30px"}
                   onClick={() => wallet.connect()}
                 >
                   Connect Wallet{" "}

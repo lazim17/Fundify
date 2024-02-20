@@ -1,4 +1,4 @@
-BetterFund : Crowdfunding Platform Powered by Ethereum Blockchain
+Fundify : Equity Crowdfunding Platform Powered by Ethereum Blockchain
 
 The Platform is live on Rinkeby Test Network and available to use at : [betterfund.vercel.app](https://betterfund.vercel.app/)
 

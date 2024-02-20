@@ -72,7 +72,6 @@ export default function NewCampaign() {
         )
         .send({
           from: accounts[0],
-          gas: 2000000
         });
 
       router.push("/");
@@ -100,7 +99,7 @@ export default function NewCampaign() {
           </Stack>
           <Box
             rounded={"lg"}
-            bg={useColorModeValue("white", "gray.700")}
+            bg={useColorModeValue("white", "black")}
             boxShadow={"lg"}
             p={8}
           >
@@ -192,7 +191,7 @@ export default function NewCampaign() {
                 <Stack spacing={10}>
                   {wallet.status === "connected" ? (
                     <Button
-                      bg={"teal.400"}
+                      bg={"teal.600"}
                       color={"white"}
                       _hover={{
                         bg: "teal.500",
@@ -205,8 +204,9 @@ export default function NewCampaign() {
                   ) : (
                     <Stack spacing={3}>
                       <Button
-                        color={"white"}
-                        bg={"teal.400"}
+                        color={useColorModeValue("white", "black")}
+                        bg={useColorModeValue("black", "white")}
+                        borderRadius={"50"}
                         _hover={{
                           bg: "teal.300",
                         }}

@@ -99,7 +99,7 @@ export default function Footer() {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>🌐 Made while 💩 by Ahamed Lazim, Anoop Tom, Arjun V</Text>
+          <Text>🌐 Made by Ahamed Lazim, Anoop Tom, Arjun V</Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton label={"Website"} href={"https://harshbadhai.me/"}>
               {" "}

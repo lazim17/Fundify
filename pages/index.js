@@ -230,22 +230,32 @@ export default function Home({ campaigns }) {
         <title>Fundify</title>
         <meta
           name="description"
-          content="Transparent Crowdfunding in Blockchain"
+          content="Transparent Crowdfunding in Blockchain, Redefined"
         />
-        <link rel="icon" href="/logo.svg" />
+        <link rel="icon" href="/Fundify.png" />
       </Head>
       <main className={styles.main}>
-        <Container py={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"} minH={"50vh"}>
+        <Container py={{ base: "4", md: "12" }} display={"flex"} flexDirection={"column"}  justifyContent={'center'} maxW={"7xl"} alignItems={"center"} minH={"90vh"}>
           {" "}
           <Heading
-            textAlign={useBreakpointValue({ base: "left" })}
+            textAlign={useBreakpointValue({ base: "center" })}
             fontFamily={"heading"}
             color={useColorModeValue("black", "white")}
-            as="h1"
-            py={10}
+            fontSize={"5xl"}
+            py={5}
           >
-            Crowdfunding using the powers of <br /> Crypto & Blockchain {" "}
+            Crowdfunding Redefined{" "}
           </Heading>
+          <Text
+            textAlign={useBreakpointValue({ base: "center" })}
+            fontFamily={"body"}
+            color={useColorModeValue("black", "white")}
+            py={10}
+            fontSize={"lg"}
+          >
+            Fundify is a platform for starting your projects. <br/> 
+            Start funding your project today
+          </Text>
           <NextLink href="/campaign/new">
             <Button
               display={{ sm: "inline-flex" }}
@@ -256,6 +266,7 @@ export default function Home({ campaigns }) {
               _hover={{
                 bg: "teal.300",
               }}
+              borderRadius={"3xl"}
             >
               Create Campaign
             </Button>
@@ -265,7 +276,7 @@ export default function Home({ campaigns }) {
           <HStack spacing={2}>
             <SkeletonCircle size="4" />
             <Heading as="h2" size="lg">
-              Open Campaigns
+              Featured Campaigns
             </Heading>
           </HStack>
 
