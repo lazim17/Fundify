@@ -26,7 +26,7 @@ export default function NavBar() {
   return (
     <Box>
       <Flex
-        color={useColorModeValue("gray.600", "white")}
+        color={useColorModeValue("black", "white")}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
@@ -44,7 +44,7 @@ export default function NavBar() {
           backdropFilter: "saturate(180%) blur(5px)",
           backgroundColor: useColorModeValue(
             "rgba(255, 255, 255, 0.8)",
-            "rgba(26, 32, 44, 0.8)"
+            "rgba(0, 0, 0, 0.8)"
           ),
         }}
       >
@@ -59,21 +59,11 @@ export default function NavBar() {
             >
               <Box
                 as={"span"}
-                color={useColorModeValue("teal.400", "teal.300")}
+                color={useColorModeValue("teal.400", "white")}
                 position={"relative"}
                 zIndex={10}
-                _after={{
-                  content: '""',
-                  position: "absolute",
-                  left: 0,
-                  bottom: 0,
-                  w: "full",
-                  h: "30%",
-                  bg: useColorModeValue("teal.100", "teal.900"),
-                  zIndex: -1,
-                }}
               >
-                <NextLink href="/">🤝BetterFund</NextLink>
+                <NextLink href="/">Fundify</NextLink>
               </Box>
             </Heading>
           </Flex>
@@ -119,8 +109,8 @@ export default function NavBar() {
                   display={{ base: "none", md: "inline-flex" }}
                   fontSize={"md"}
                   fontWeight={600}
-                  color={"white"}
-                  bg={"teal.400"}
+                  color={useColorModeValue("white","black")}
+                  bg={useColorModeValue("black","white")}
                   href={"#"}
                   _hover={{
                     bg: "teal.300",

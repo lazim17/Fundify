@@ -42,7 +42,7 @@ const SocialButton = ({ children, label, href }) => {
 export default function Footer() {
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
+      bg={useColorModeValue("gray.50", "black")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
       <Container
@@ -62,21 +62,11 @@ export default function Footer() {
         >
           <Box
             as={"span"}
-            color={useColorModeValue("teal.400", "teal.300")}
+            color={useColorModeValue("black", "teal.300")}
             position={"relative"}
             zIndex={10}
-            _after={{
-              content: '""',
-              position: "absolute",
-              left: 0,
-              bottom: 0,
-              w: "full",
-              h: "30%",
-              bg: useColorModeValue("teal.100", "teal.900"),
-              zIndex: -1,
-            }}
           >
-            <NextLink href="/">🤝BetterFund</NextLink>
+            <NextLink href="/">Fundify</NextLink>
           </Box>
         </Heading>
         <Stack direction={"row"} spacing={6}>
@@ -109,7 +99,7 @@ export default function Footer() {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>🌐 Made while 💩 by Harsh, Hritvik , Nischal & Aaditya</Text>
+          <Text>🌐 Made while 💩 by Ahamed Lazim, Anoop Tom, Arjun V</Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton label={"Website"} href={"https://harshbadhai.me/"}>
               {" "}

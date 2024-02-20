@@ -4,7 +4,7 @@ import { ArrowBackIcon } from "@chakra-ui/icons";
 import { useWallet } from "use-wallet";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { getETHPrice, getETHPriceInUSD } from "../../../../lib/getETHPrice";
 import {
   Box,
@@ -29,22 +29,6 @@ import web3 from "../../../../smart-contract/web3";
 import Campaign from "../../../../smart-contract/campaign";
 import { useAsync } from "react-use";
 
-useEffect(() => {
-  const handleAccountsChanged = (accounts) => {
-    // Update wallet status or perform other actions
-    console.log('Accounts changed:', accounts);
-  };
-
-  if (wallet.ethereum) {
-    wallet.ethereum.on('accountsChanged', handleAccountsChanged);
-
-    // Cleanup the event listener when the component is unmounted
-    return () => {
-      wallet.ethereum.off('accountsChanged', handleAccountsChanged);
-    };
-  }
-}, [wallet]);
-
 
 export default function NewRequest() {
   const router = useRouter();
@@ -60,6 +44,22 @@ export default function NewRequest() {
   const [inUSD, setInUSD] = useState();
   const [ETHPrice, setETHPrice] = useState(0);
   const wallet = useWallet();
+  useEffect(() => {
+    const handleAccountsChanged = (accounts) => {
+      // Update wallet status or perform other actions
+      console.log('Accounts changed:', accounts);
+    };
+  
+    if (wallet.ethereum) {
+      wallet.ethereum.on('accountsChanged', handleAccountsChanged);
+  
+      // Cleanup the event listener when the component is unmounted
+      return () => {
+        wallet.ethereum.off('accountsChanged', handleAccountsChanged);
+      };
+    }
+  }, [wallet]);
+  
   useAsync(async () => {
     try {
       const result = await getETHPrice();

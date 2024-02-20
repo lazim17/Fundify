@@ -141,7 +141,7 @@ const RequestRow = ({
             label={errorMessageApprove}
             bg={useColorModeValue("white", "gray.700")}
             placement={"top"}
-            color={useColorModeValue("gray.800", "white")}
+            color={useColorModeValue("black", "white")}
             fontSize={"1em"}
           >
             <WarningIcon
@@ -154,7 +154,7 @@ const RequestRow = ({
               label="This Request has been finalized & withdrawn to the recipient,it may then have less no of approvers"
               bg={useColorModeValue("white", "gray.700")}
               placement={"top"}
-              color={useColorModeValue("gray.800", "white")}
+              color={useColorModeValue("blck", "white")}
               fontSize={"1em"}
             >
               <CheckCircleIcon
@@ -183,7 +183,7 @@ const RequestRow = ({
           label={errorMessageFinalize}
           bg={useColorModeValue("white", "gray.700")}
           placement={"top"}
-          color={useColorModeValue("gray.800", "white")}
+          color={useColorModeValue("black", "white")}
           fontSize={"1em"}
         >
           <WarningIcon
@@ -197,7 +197,7 @@ const RequestRow = ({
               label="This Request has been finalized & withdrawn to the recipient,it may then have less no of approvers"
             bg={useColorModeValue("white", "gray.700")}
             placement={"top"}
-            color={useColorModeValue("gray.800", "white")}
+            color={useColorModeValue("black", "white")}
             fontSize={"1em"}
           >
             <CheckCircleIcon

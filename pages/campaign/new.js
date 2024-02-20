@@ -96,7 +96,7 @@ export default function NewCampaign() {
             <NextLink href="/"> Back to Home</NextLink>
           </Text>
           <Stack>
-            <Heading fontSize={"4xl"}>Create a New Campaign 📢</Heading>
+            <Heading fontSize={"4xl"}>Create a New Campaign</Heading>
           </Stack>
           <Box
             rounded={"lg"}

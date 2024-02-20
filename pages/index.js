@@ -77,7 +77,7 @@ function CampaignCard({
   return (
     <NextLink href={`/campaign/${id}`}>
       <Box
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue("white", "black")}
         maxW={{ md: "sm" }}
         borderWidth="1px"
         rounded="lg"
@@ -121,9 +121,9 @@ function CampaignCard({
 
             <Tooltip
               label="Contribute"
-              bg={useColorModeValue("white", "gray.700")}
+              bg={useColorModeValue("white", "black")}
               placement={"top"}
-              color={useColorModeValue("gray.800", "white")}
+              color={useColorModeValue("black", "white")}
               fontSize={"1.2em"}
             >
               <chakra.a display={"flex"}>
@@ -227,7 +227,7 @@ export default function Home({ campaigns }) {
   return (
     <div>
       <Head>
-        <title>BetterFund</title>
+        <title>Fundify</title>
         <meta
           name="description"
           content="Transparent Crowdfunding in Blockchain"
@@ -235,24 +235,24 @@ export default function Home({ campaigns }) {
         <link rel="icon" href="/logo.svg" />
       </Head>
       <main className={styles.main}>
-        <Container py={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
+        <Container py={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"} minH={"50vh"}>
           {" "}
           <Heading
             textAlign={useBreakpointValue({ base: "left" })}
             fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
+            color={useColorModeValue("black", "white")}
             as="h1"
-            py={4}
+            py={10}
           >
-            Crowdfunding using the powers of <br /> Crypto & Blockchain 😄{" "}
+            Crowdfunding using the powers of <br /> Crypto & Blockchain {" "}
           </Heading>
           <NextLink href="/campaign/new">
             <Button
               display={{ sm: "inline-flex" }}
               fontSize={"md"}
               fontWeight={600}
-              color={"white"}
-              bg={"teal.400"}
+              color={useColorModeValue("white","black")}
+              bg={useColorModeValue("black","white")}
               _hover={{
                 bg: "teal.300",
               }}

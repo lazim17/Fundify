@@ -1,15 +1,23 @@
 import "../styles/globals.css";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme,useColorModeValue } from "@chakra-ui/react";
 import { UseWalletProvider } from "use-wallet";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
-import "@fontsource/space-grotesk";
+import '@fontsource/poppins';
+import '@fontsource/inter';
 
 const theme = extendTheme({
   fonts: {
-    heading: "Space Grotesk",
-    body: "Space Grotesk",
+    heading: "Poppins",
+    body: "Inter",
   },
+  styles:{
+    global: () => ({
+      body: {
+        bg: useColorModeValue("white","black"),
+      }
+    })
+  }
 });
 
 function MyApp({ Component, pageProps }) {
