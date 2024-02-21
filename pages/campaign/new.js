@@ -44,6 +44,10 @@ export default function NewCampaign() {
   const [minContriInUSD, setMinContriInUSD] = useState();
   const [targetInUSD, setTargetInUSD] = useState();
   const [ETHPrice, setETHPrice] = useState(0);
+
+
+
+
   useAsync(async () => {
     try {
       const result = await getETHPrice();

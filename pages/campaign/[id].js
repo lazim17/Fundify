@@ -126,12 +126,31 @@ export default function CampaignSingle({
   const { handleSubmit, register, formState, reset, getValues } = useForm({
     mode: "onChange",
   });
+  const [connectedAddress, setConnectedAddress] = useState("");
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [amountInUSD, setAmountInUSD] = useState();
   const wallet = useWallet();
   const router = useRouter();
   const { width, height } = useWindowSize();
+
+  useEffect(() => {
+    const fetchConnectedAddress = async () => {
+      try {
+        const accounts = await web3.eth.getAccounts();
+        if (accounts.length > 0) {
+          setConnectedAddress(accounts[0]);
+        }
+      } catch (error) {
+        console.error("Error fetching connected address:", error);
+      }
+    };
+  
+    fetchConnectedAddress();
+  }, []);
+  
+
   async function onSubmit(data) {
     console.log(data);
     try {
@@ -389,7 +408,7 @@ export default function CampaignSingle({
                             boxShadow: "xl",
                           }}
                           isLoading={formState.isSubmitting}
-                          isDisabled={amountInUSD ? false : true}
+                          isDisabled={amountInUSD ? (manager === connectedAddress) : true}
                           type="submit"
                         >
                           Contribute

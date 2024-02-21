@@ -44,6 +44,28 @@ export default function NewRequest() {
   const [inUSD, setInUSD] = useState();
   const [ETHPrice, setETHPrice] = useState(0);
   const wallet = useWallet();
+  const [connectedAddress, setConnectedAddress] = useState("");
+
+
+  useEffect(() => {
+    const fetchConnectedAddress = async () => {
+      try {
+        const accounts = await web3.eth.getAccounts();
+        if (accounts.length > 0) {
+          setConnectedAddress(accounts[0]);
+        }
+      } catch (error) {
+        console.error("Error fetching connected address:", error);
+      }
+    };
+  
+    fetchConnectedAddress();
+  }, []);
+  
+
+
+
+
   useEffect(() => {
     const handleAccountsChanged = (accounts) => {
       // Update wallet status or perform other actions
@@ -60,6 +82,9 @@ export default function NewRequest() {
     }
   }, [wallet]);
   
+ 
+
+
   useAsync(async () => {
     try {
       const result = await getETHPrice();
@@ -152,6 +177,7 @@ export default function NewRequest() {
                     {...register("recipient", {
                       required: true,
                     })}
+                    value={connectedAddress}
                     isDisabled={isSubmitting}
                   />
                 </FormControl>
